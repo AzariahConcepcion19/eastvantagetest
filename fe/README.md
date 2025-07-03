@@ -1,5 +1,3 @@
-- Create ".env"
-- Get the API URL from the backend (You can see it after running "php artisan serve" on BE)
-- Put the API URL on .env (Kindly follow the env file as example)
+- Create ".env" from ".env.example" (Adjust API URL if needed)
 - Run "yarn install" in the FE root
 - Run "yarn start" in the FE root

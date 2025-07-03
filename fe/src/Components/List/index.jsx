@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import {
   Box,
+  Button,
+  Flex,
   Text,
   Select
 } from '@chakra-ui/react'
@@ -10,15 +12,18 @@ import {
   getAllUsersRequest
 } from '../Utils/Axios'
 import { motion } from 'framer-motion';
+import { useHistory } from 'react-router-dom';
 
 import BootstrapTable from 'react-bootstrap-table-next'
 import paginationFactory from 'react-bootstrap-table2-paginator'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { COLORS } from '../Utils/Colors';
 
+
 const MotionBox = motion(Box)
 
 export const List = () => {
+  const history = useHistory()
   const [columns, setColumns] = useState([])
   const [origUsers, setOrigUsers] = useState([])
   const [users, setUsers] = useState([])
@@ -135,7 +140,23 @@ export const List = () => {
               condensed
             />
           ) : (
-            <div>Loading...</div>
+            <Flex padding="4" justify="center">
+              <Button
+                textColor={COLORS.white}
+                bg="transparent"
+                border={`solid 2px ${COLORS.lightGreen}`}
+                padding="0 30px"
+                minWidth="155px"
+                mr="auto"
+                ml="auto"
+                _hover={{
+                  background: COLORS.lightGreen
+                }}
+                onClick={() => history.push('/form')}
+              >
+                No data. Create a user instead
+              </Button>
+            </Flex>
           )
         }
       </Box>

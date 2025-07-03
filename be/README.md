@@ -1,5 +1,5 @@
 - Create ".env" using .env.example as a guide
 - Create the DB you stated on .env
-- Run "php artisan install" in the BE root
+- Run "composer install" in the BE root
 - Run "php artisan migrate" in the BE root
 - Run "php artisan serve" in the BE root
